@@ -1,0 +1,61 @@
+name: 'kbqa'
+data_dir: '../data/kbqa/'
+kb_path: '../../data/recipe_kg/recipe_kg.json'
+train_data: 'train_vec.json'
+valid_data: 'valid_vec.json'
+test_data: 'test_vec.json'
+test_raw_data: 'test_qas.json'
+pre_word2vec: '../data/kbqa/glove_pretrained_300d_w2v.npy'
+
+# Full vocab
+vocab_size: 10896
+num_ent_types: 7
+num_relations: 11
+
+
+
+num_query_words: 10
+
+# Output
+model_file: '../runs/kbqa/pbow_ent_mark_40.model'
+
+
+
+# Model
+model_name: 'pbow'
+no_filter_answer_type: False
+query_size: 64
+ans_type_bow_size: 6
+ans_path_bow_size: 6
+ans_path_size: 2
+ans_ctx_entity_bow_size: 16
+
+
+use_entity_name: False
+constraint_mark_emb: 40
+vocab_embed_size: 300
+hidden_size: 128
+o_embed_size: 128
+mem_size: 96
+word_emb_dropout: 0.3
+que_enc_dropout: 0.3
+ans_enc_dropout: 0.2
+attention: 'add'
+num_hops: 1
+
+# Training
+learning_rate: 0.001
+batch_size: 32
+grad_accumulated_steps: 1
+num_epochs: 100
+valid_patience: 10
+margin: 1
+
+# Testing
+test_batch_size: 1
+test_margin:
+        - 2
+
+# Device
+no_cuda: False
+gpu: 0

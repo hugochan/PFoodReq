@@ -1,0 +1,72 @@
+name: 'kbqa'
+data_dir: '../data/kbqa/'
+kb_path: '../../data/recipe_kg/recipe_kg.json'
+train_data: null
+valid_data: null
+test_data: null
+test_raw_data: 'test_qas_150820.json'
+pre_word2vec: '../data/kbqa/glove_pretrained_300d_w2v.npy'
+
+# similar recipes
+dish_info_file: 'PFoodRec/HEALS-FoodRec/PFoodReq/parsers/dish_info_map.json'
+recipe_emb_file: 'PFoodRec/HEALS-FoodRec/PFoodReq/recipe_embeddings/new_reciptor_507834_tuned_emb.pkl'
+dish_name2id_file: 'PFoodRec/HEALS-FoodRec/PFoodReq/parsers/name_foodkgid_recipe1Mid_foodcomurl_mapping.tab'
+similarity_augmented_ground_truth_answers: True
+augment_similar_dishs: False
+ground_truth_answer_ranking_margin: 0.2 # 0.2
+similarity_score_ratio: 0.3 # 0.3
+test_margin:
+        - 0.9 # 0.9
+
+
+
+# Full vocab
+vocab_size: 10896
+num_ent_types: 7
+num_relations: 11
+
+
+
+num_query_words: 10
+
+# Output
+model_file: '../runs/kbqa/pfoodreq_ent_mark_40.model'
+
+
+# Model
+no_filter_answer_type: False
+query_size: 64
+ans_type_bow_size: 6
+ans_path_bow_size: 6
+ans_path_size: 2
+ans_ctx_entity_bow_size: 16
+
+
+use_entity_name: False
+fix_word_emb: False
+constraint_mark_emb: 40
+vocab_embed_size: 300
+hidden_size: 128
+o_embed_size: 128
+mem_size: 96
+word_emb_dropout: 0.3
+que_enc_dropout: 0.3
+ans_enc_dropout: 0.2
+attention: 'add'
+num_hops: 1
+
+# Training
+learning_rate: 0.001
+batch_size: 32
+grad_accumulated_steps: 1
+num_epochs: 100
+valid_patience: 10
+margin: 1
+
+# Testing
+test_batch_size: 1
+
+
+# Device
+no_cuda: False
+gpu: 0
