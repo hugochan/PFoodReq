@@ -1,10 +1,10 @@
 name: 'kbqa'
-data_dir: '../../data/kbqa_data/'
+data_dir: '../data/kbqa/'
 kb_path: '../../data/recipe_kg/recipe_kg.json'
-train_data: null
-valid_data: null
-test_data: null
-test_raw_data: 'test_qas_110820.json'
+train_data: 'train_vec.json'
+valid_data: 'valid_vec.json'
+test_data: 'test_vec.json'
+test_raw_data: 'test_qas.json'
 pre_word2vec: '../data/kbqa/glove_pretrained_300d_w2v.npy'
 
 # Full vocab
