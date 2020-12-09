@@ -3,6 +3,12 @@
 Code & data accompanying the WSDM 2021 paper "Personalized Food Recommendation as Constrained Question Answering over a Large-scale Food Knowledge Graph".
 
 
+## Architecture
+
+![PFoodReq architecture.](images/arch.png)
+
+
+
 
 ## Prerequisites
 This code is written in python 3. You will need to install a few python packages in order to run the code.
